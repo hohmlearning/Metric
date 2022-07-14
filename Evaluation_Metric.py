@@ -6,6 +6,21 @@ Created on Mon Jun 13 21:34:10 2022
 """
 import numpy as np
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class Metric_regression():
     def fun_ARD (Y_exp, Y_calc):
         '''
