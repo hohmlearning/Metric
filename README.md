@@ -60,3 +60,11 @@ In case **Class 2 >> Class 1**, the **Accuracy** is equivalient to the **Selecti
 \$$
 \underset{\frac{FP+TN}{TP+FN}\to \infty }{\mathop{\lim }}\left( \frac{\frac{TP}{TP+FN}}{1+\frac{FP+TN}{TP+FN}}+\frac{\frac{TN}{FP+TN}}{1+\frac{1}{\frac{FP+TN}{TP+FN}}} \right)=\frac{TN}{FP+TN}\equiv \text{Selectivity}
 $$
+
+In image segmentation the case **Class 2 >> Class 1** often exists. Typically, pixels of **Class 2** are classified as background and pixels of **Class 1** enbody the interessted regions. The Jaccard Index, or Intersection over Union (IoU), is often used for binary problems in Computer Vision (CV) [1]. The IoU is suitable for backpropagation, since the aproximation of the IoU is differentiable [1]. The IoU is defined as:
+
+\$$
+IoU\equiv \frac{{{\left. \text{Class 1} \right|}_{\text{Actual Condition}}}\bigcap {{\left. \text{Class 1} \right|}_{\text{Predicted Condition}}}}{{{\left. \text{Class 1} \right|}_{\text{Actual Condition}}}\bigcup {{\left. \text{Class 1} \right|}_{\text{Predicted Condition}}}}
+$$
+
+[1] Floris van Beers, Using intersection over union loss to improve binary image segmentation, Bachelor's Thesis, 2018
