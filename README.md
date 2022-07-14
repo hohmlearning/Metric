@@ -56,6 +56,7 @@ In case **Class 1 >> Class 2**, the **Accuracy** is equivalient to the **Sensiti
 $$
 
 In case **Class 2 >> Class 1**, the **Accuracy** is equivalient to the **Selectivity**. Hence, when reporting the **Accuracy**, the **Selectivity** is measured:
+
 \$$
 \underset{\frac{FP+TN}{TP+FN}\to \infty }{\mathop{\lim }}\left( \frac{\frac{TP}{TP+FN}}{1+\frac{FP+TN}{TP+FN}}+\frac{\frac{TN}{FP+TN}}{1+\frac{1}{\frac{FP+TN}{TP+FN}}} \right)=\frac{TN}{FP+TN}\equiv \text{Selectivity}
 $$
