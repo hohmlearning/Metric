@@ -28,6 +28,6 @@ The fraction of correct predicted examples and the sum of total examples is call
  For imbalanced sets, where the data set consists of more examples for one class, Accuracy potentially leads to wrong performance evaluation of the model.\
  The **Sensitivity** is defined as the ratio of the $TP$ to the sum of actual true examples:
  $$
-  \text{Sensitivity} =  \frac{TP}{TP+FN}
+ \text{Sensitivity}=\frac{TP}{TP+FN}
  $$
  
