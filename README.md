@@ -18,9 +18,9 @@ The definition of the True positive (TP), False negative (FN), False positive (F
 **Table 1**: Confusion matrix for binary classification.\
 <br>
 
-The fraction of correct predicted examples and the sum of total examples is called Accuray:\
+The fraction of correct predicted examples and the sum of total examples is called Accuray:
 
- $$ 
+ \$$ 
   \text{Accuracy}=\frac{TP+TN}{TP+FN+FP+TN}
  $$
  
@@ -32,3 +32,7 @@ The fraction of correct predicted examples and the sum of total examples is call
  \text{Sensitivity}=\frac{TP}{TP+FN}
  $$
  
+ Fokosing on the $TN$, the **Selectivity** enbodies the ratio of the $TN$ and the actual true negative values:
+ \$$
+ \text{Selectivity} = \frac{TN}{FP+TN}
+ $$
