@@ -33,6 +33,13 @@ The fraction of correct predicted examples and the sum of total examples is call
  $$
  
  Fokosing on the $TN$, the **Selectivity** enbodies the ratio of the $TN$ and the actual true negative values:
+ 
  \$$
  \text{Selectivity} = \frac{TN}{FP+TN}
  $$
+
+The **Accuracy** is reformulated with the **Sensitivity** and the **Selectivity**:
+
+\$$
+	\frac{TP+TN}{TP+FN+FP+TN}=\frac{\frac{TP}{TP+FN}}{1+\frac{FP+TN}{TP+FN}}+\frac{\frac{TN}{FP+TN}}{1+\frac{1}{\frac{FP+TN}{TP+FN}}}
+$$
