@@ -15,4 +15,11 @@ The definition of the True positive (TP), False negative (FN), False positive (F
 | **Actual condition** | Class 1 | True positive (TP)      | False negative (FN) |
 |**Actual condition**           | Class 2 | False positive (FP)     | True negative (TN)  |
 
-**Table 1**: Confusion matrix for binary classification.
+**Table 1**: Confusion matrix for binary classification.\
+<br>
+
+The fraction of correct predicted examples and the sum of total examples is called accuray:
+
+ $$ 
+  \[\text{Accuracy}=\frac{TP+TN}{TP+FN+FP+TN}\]
+ $$
