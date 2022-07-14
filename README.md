@@ -18,8 +18,12 @@ The definition of the True positive (TP), False negative (FN), False positive (F
 **Table 1**: Confusion matrix for binary classification.\
 <br>
 
-The fraction of correct predicted examples and the sum of total examples is called accuray:
+The fraction of correct predicted examples and the sum of total examples is called Accuray:
 
  $$ 
-  \[\text{Accuracy}=\frac{TP+TN}{TP+FN+FP+TN}\]
+  \text{Accuracy}=\frac{TP+TN}{TP+FN+FP+TN}
  $$
+ 
+ The Accuracy is suitable for balanced data sets.
+ For imbalanced sets, where the data set consists of more examples for one class, Accuracy potentially leads to wrong performance evaluation of the model.
+ 
