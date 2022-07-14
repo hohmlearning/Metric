@@ -12,8 +12,8 @@ The definition of the True positive (TP), False negative (FN), False positive (F
 |                      |         | **Predicted condition**|**Predicted condition**|
 |----------------------|---------|:-------------------------:|:---------------------:|
 |                      |         | Class 1                 | Class 2             |
-| **Actual condition** | Class 1 | True positive (TP)      | False negative (FN) |
-|**Actual condition**           | Class 2 | False positive (FP)     | True negative (TN)  |
+| **Actual condition** | Class 1 | True positive ($TP$)      | False negative ($FN$) |
+|**Actual condition**           | Class 2 | False positive ($FP$)     | True negative ($TN$)  |
 
 **Table 1**: Confusion matrix for binary classification.\
 <br>
@@ -25,5 +25,9 @@ The fraction of correct predicted examples and the sum of total examples is call
  $$
  
  The Accuracy is suitable for balanced data sets.
- For imbalanced sets, where the data set consists of more examples for one class, Accuracy potentially leads to wrong performance evaluation of the model.
+ For imbalanced sets, where the data set consists of more examples for one class, Accuracy potentially leads to wrong performance evaluation of the model.\
+ The **Sensitivity** is defined as the ratio of the $TP$ to the sum of actual true examples:
+ $$
+  \text{Sensitivity} =  \frac{TP}{TP+FN}
+ $$
  
