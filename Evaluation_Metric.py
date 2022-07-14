@@ -5,6 +5,7 @@ Created on Mon Jun 13 21:34:10 2022
 @author: Hohm
 """
 import numpy as np
+from sklearn.metrics import jaccard_score, accuracy_score
 
 class Metric_regression():
     def fun_ARD (Y_exp, Y_calc):
@@ -100,11 +101,12 @@ class Metric_classification():
         sensitivity : float [0, 1]
 
         '''
+        epsilon = 1E-14
         positive_exp = y_exp == class_label 
         positive_calc = y_calc == class_label
         TP = (positive_exp * positive_calc).sum()
         TP_FN = positive_exp.sum()
-        sensitivity = TP / TP_FN
+        sensitivity = TP / (TP_FN + epsilon)
         return (sensitivity)
     
     def fun_IoU (self, y_exp, y_calc, class_label):
@@ -123,15 +125,21 @@ class Metric_classification():
         IoU : float [0, 1]
 
         '''
+        epsilon = 1E-14
         positive_exp = y_exp == class_label 
         positive_calc = y_calc == class_label
         TP = (positive_exp * positive_calc).sum()
-        IoU = TP / (positive_exp.sum() + positive_calc.sum() - TP)
+        IoU = TP / (positive_exp.sum() + positive_calc.sum() - TP + epsilon)
         return (IoU)
     
+if __name__ == '__main__':
+    true = np.random.randint(0, 2, 1000)
+    predicted = np.random.randint(0, 2, 1000)
         
-    
-    
+    print(Metric_classification().fun_accurracy(true, predicted), accuracy_score(true, predicted))
+    print(Metric_classification().fun_sensitivity_selecivity(true, predicted, 0))
+    print(Metric_classification().fun_sensitivity_selecivity(true, predicted, 1))
+    print(Metric_classification().fun_IoU(true, predicted, 0), jaccard_score(true, predicted, pos_label=0))   
     
     
     
