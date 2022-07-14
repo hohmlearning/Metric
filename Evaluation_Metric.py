@@ -6,48 +6,21 @@ Created on Mon Jun 13 21:34:10 2022
 """
 import numpy as np
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class Metric_regression():
     def fun_ARD (Y_exp, Y_calc):
         '''
         Calculates the Average Relative Deviation of the Experimental Data and the 
-        fitted Data and returns it in percentage.
+        fitted Data.
         '''
-        '''
-        Y_exp_zero = Y_exp == 0
-        Y_exp_non_zero = ~Y_exp_zero
-        datapoints = Y_exp_non_zero.sum()
-        RD = np.abs(Y_exp[Y_exp_non_zero] - Y_calc[Y_exp_non_zero]) / (Y_exp[Y_exp_non_zero] + 1E-16)
-        RD_sum = RD.sum()    	  
-        ARD = RD_sum/datapoints
-        if Y_exp_zero.sum() >0:
-            raise(RuntimeWarning('Zero found in "Y_exp". Point was not considered for calculation the ARD.'))
-        '''
+
         datapoints = Y_exp.shape[0]
         epsilon = 1E-8
-        difference = np.abs(Y_exp - Y_calc)
         non_zero = Y_exp > epsilon
         RD = np.zeros(Y_exp.shape)    
         RD[non_zero] = np.abs(Y_exp[non_zero] - Y_calc[non_zero]) / (Y_exp[non_zero] + epsilon)    
         RD_sum = RD.sum()    	  
         ARD = RD_sum/datapoints
-        if ARD > 100:
-            None
-            #import pdb; pdb.set_trace()
+       
         return (ARD)    
         
             
@@ -109,4 +82,70 @@ class Metric_classification():
         NB = Y_exp == Y_calc
         metric = NB.mean()
         return (metric)
+    
+    def fun_sensitivity_selecivity (self, y_exp, y_calc, class_label):
+        '''
+        Returns the sensitivity for class 1, if passed the corresponding
+        class label. Besides, the selectivity is returned, if passed the
+        class label of the second class.
+
+        Parameters
+        ----------
+        y_exp :  Numpy vector (datapooints x 1)
+        y_calc :  Numpy vector (datapooints x 1)
+        class_label : integer [0, 1]
+
+        Returns
+        -------
+        sensitivity : float [0, 1]
+
+        '''
+        positive_exp = y_exp == class_label 
+        positive_calc = y_calc == class_label
+        TP = (positive_exp * positive_calc).sum()
+        TP_FN = positive_exp.sum()
+        sensitivity = TP / TP_FN
+        return (sensitivity)
+    
+    def fun_IoU (self, y_exp, y_calc, class_label):
+        '''
+        Calculates the Intersection over Union (IoU), or Jaccard Index,
+        of the corresponding class.
+
+        Parameters
+        ----------
+        y_exp : Numpy vector (datapooints x 1)
+        y_calc : Numpy vector (datapooints x 1)
+        class_label : integer [0, 1]
+
+        Returns
+        -------
+        IoU : float [0, 1]
+
+        '''
+        positive_exp = y_exp == class_label 
+        positive_calc = y_calc == class_label
+        TP = (positive_exp * positive_calc).sum()
+        IoU = TP / (positive_exp.sum() + positive_calc.sum() - TP)
+        return (IoU)
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
