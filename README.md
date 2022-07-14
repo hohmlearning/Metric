@@ -71,7 +71,7 @@ Therefore, the for **Class 1** $IoU\_1$ is defined:
 
 \$$
 
-Io{{U}_{1}}=\frac{TP}{TP+FP+FN}
+IoU_{1}=\frac{TP}{TP+FP+FN}
 
 $$
 
