@@ -52,5 +52,5 @@ In case of an imbalanced dataset, to limitting cases occur:
 In case **Class 1 >> Class 2**, the **Accuracy** is equivalient to the **Sensitivity**. Hence, when reporting the **Accuracy**, the **Sensitivity is measured:
 
 \$$
-\underset{\frac{FP+TN}{TP+FN}\to 0}{\mathop{\lim }}\,\left( \frac{\frac{TP}{TP+FN}}{1+\frac{FP+TN}{TP+FN}}+\frac{\frac{TN}{FP+TN}}{1+\frac{1}{\frac{FP+TN}{TP+FN}}} \right)=\frac{TP}{TP+FN}\equiv \text{Sensitivity}
+\underset{\frac{FP+TN}{TP+FN}\to 0}{\mathop{\lim }} \left( \frac{\frac{TP}{TP+FN}}{1+\frac{FP+TN}{TP+FN}}+\frac{\frac{TN}{FP+TN}}{1+\frac{1}{\frac{FP+TN}{TP+FN}}} \right)=\frac{TP}{TP+FN}\equiv \text{Sensitivity}
 $$
