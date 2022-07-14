@@ -14,4 +14,5 @@ The definition of the True positive (TP), False negative (FN), False positive (F
 |                      |         | Class 1                 | Class 2             |
 | **Actual condition** | Class 1 | True positive (TP)      | False negative (FN) |
 |**Actual condition**           | Class 2 | False positive (FP)     | True negative (TN)  |
+
 **Table 1**: Confusion matrix for binary classification.
