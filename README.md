@@ -67,4 +67,12 @@ In image segmentation the case **Class 2 >> Class 1** often exists. Typically, p
 IoU\_1 \equiv \frac{{{\left. \text{Class 1} \right|}\_{\text{Actual Condition}}}\bigcap {{\left. \text{Class 1} \right|}\_{\text{Predicted Condition}}}}{{{\left. \text{Class 1} \right|}\_{\text{Actual Condition}}}\bigcup {{\left. \text{Class 1} \right|}\_{\text{Predicted Condition}}}}
 $$
 
+Therefore, the for **Class 1** $IoU\_1$ is defined:
+
+\$$
+
+Io{{U}_{1}}=\frac{TP}{TP+FP+FN}
+
+$$
+
 [1] Floris van Beers, Using intersection over union loss to improve binary image segmentation, Bachelor's Thesis, 2018
